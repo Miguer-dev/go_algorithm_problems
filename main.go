@@ -1,7 +1,5 @@
 package main
 
-import "fmt"
-
 func main() {
-	fmt.Println(TwoSum([]int{2, 7, 11, 15}, 9))
+	TopKFrequent([]int{1, 1, 1, 2, 2, 3}, 2)
 }
