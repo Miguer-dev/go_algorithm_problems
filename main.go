@@ -1,5 +1,5 @@
 package main
 
 func main() {
-	TopKFrequent([]int{1, 1, 1, 2, 2, 3}, 2)
+	productExceptSelf([]int{-1, 1, 0, -3, 3})
 }
