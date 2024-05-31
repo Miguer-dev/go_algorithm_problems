@@ -2,21 +2,41 @@ package main
 
 func isValidSudoku(board [][]byte) bool {
 
-	for _, miniBoard := range board {
-		verifyBoard := [9]bool{false, false, false, false, false, false, false, false, false}
+	var verifyBoard, verifyColumns, verifyRow [9][9]bool
 
-		for _, value := range miniBoard {
-			if value >= 1 && value <= 9 {
-				if !verifyBoard[value-1] {
-					verifyBoard[value-1] = true
-				} else {
-					return false
-				}
-			} else if value == '.' {
+	currentIndex3x3 := 0
+	indexBoards3x3 := [81]uint8{
+		0, 0, 0, 1, 1, 1, 2, 2, 2,
+		0, 0, 0, 1, 1, 1, 2, 2, 2,
+		0, 0, 0, 1, 1, 1, 2, 2, 2,
+		3, 3, 3, 4, 4, 4, 5, 5, 5,
+		3, 3, 3, 4, 4, 4, 5, 5, 5,
+		3, 3, 3, 4, 4, 4, 5, 5, 5,
+		6, 6, 6, 7, 7, 7, 8, 8, 8,
+		6, 6, 6, 7, 7, 7, 8, 8, 8,
+		6, 6, 6, 7, 7, 7, 8, 8, 8}
+
+	for indexRow, miniBoard := range board {
+
+		for indexColumn, value := range miniBoard {
+			if value == '.' {
+				currentIndex3x3++
 				continue
-			} else {
-				return false
 			}
+			value = value - '0'
+
+			if verifyBoard[indexBoards3x3[currentIndex3x3]][value-1] &&
+				verifyRow[indexRow][value-1] &&
+				verifyColumns[indexColumn][value-1] {
+
+				return false
+			} else {
+				verifyBoard[indexBoards3x3[currentIndex3x3]][value-1] = true
+				verifyRow[indexRow][value-1] = true
+				verifyColumns[indexColumn][value-1] = true
+			}
+
+			currentIndex3x3++
 		}
 	}
 
