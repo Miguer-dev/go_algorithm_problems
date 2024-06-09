@@ -1,6 +1,8 @@
 package main
 
-func main() {
+import "fmt"
 
-	isValid("()")
+func main() {
+	arr := []string{"4", "13", "5", "/", "+"}
+	fmt.Println(evalRPN(arr))
 }
