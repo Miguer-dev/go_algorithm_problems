@@ -1,16 +1,16 @@
 package main
 
 type LIFO struct {
-	queue []interface{}
+	stack []interface{}
 }
 
-func (q *LIFO) push(element interface{}) {
-	q.queue = append(q.queue, element)
+func (s *LIFO) push(element interface{}) {
+	s.stack = append(s.stack, element)
 }
 
-func (q *LIFO) pop() interface{} {
-	deleted := q.queue[len(q.queue)-1]
-	q.queue = q.queue[:len(q.queue)-1]
+func (s *LIFO) pop() interface{} {
+	deleted := s.stack[len(s.stack)-1]
+	s.stack = s.stack[:len(s.stack)-1]
 
 	return deleted
 }

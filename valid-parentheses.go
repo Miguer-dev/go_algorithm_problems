@@ -11,7 +11,7 @@ func isValid(s string) bool {
 		if _, exits := openClose[value]; !exits {
 			//if ( o [ o {
 			queue.push(value)
-		} else if len(queue.queue) != 0 {
+		} else if len(queue.stack) != 0 {
 			//if ) o ] o }
 			open := queue.pop()
 			if open != openClose[value] {
@@ -22,7 +22,7 @@ func isValid(s string) bool {
 		}
 	}
 
-	if len(queue.queue) != 0 {
+	if len(queue.stack) != 0 {
 		return false
 	}
 
