@@ -1,4 +1,4 @@
-package main
+package array_shashing
 
 func TwoSum(nums []int, target int) []int {
 	//key=value, value=array index

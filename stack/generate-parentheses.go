@@ -1,4 +1,4 @@
-package main
+package stack
 
 type Register struct {
 	sequence string

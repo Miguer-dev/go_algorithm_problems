@@ -1,4 +1,4 @@
-package main
+package array_shashing
 
 func IsAnagram(s string, t string) bool {
 

@@ -1,4 +1,4 @@
-package main
+package stack
 
 func dailyTemperatures(temps []int) []int {
 	results := make([]int, len(temps))

@@ -1,4 +1,4 @@
-package main
+package array_shashing
 
 func productExceptSelf(nums []int) []int {
 	result := []int{}
