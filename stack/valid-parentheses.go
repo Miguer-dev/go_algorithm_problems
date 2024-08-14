@@ -1,7 +1,7 @@
 package main
 
 func isValid(s string) bool {
-	queue := LIFO{}
+	stack := LIFO{}
 	openClose := make(map[rune]rune)
 	openClose[')'] = '('
 	openClose[']'] = '['
@@ -10,10 +10,10 @@ func isValid(s string) bool {
 	for _, value := range s {
 		if _, exits := openClose[value]; !exits {
 			//if ( o [ o {
-			queue.push(value)
-		} else if len(queue.stack) != 0 {
+			stack.push(value)
+		} else if len(stack) != 0 {
 			//if ) o ] o }
-			open := queue.pop()
+			open := stack.pop()
 			if open != openClose[value] {
 				return false
 			}
@@ -22,7 +22,7 @@ func isValid(s string) bool {
 		}
 	}
 
-	if len(queue.stack) != 0 {
+	if len(stack) != 0 {
 		return false
 	}
 

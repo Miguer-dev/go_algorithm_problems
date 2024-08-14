@@ -10,7 +10,7 @@ type Height struct {
 	positions []int
 }
 
-func largestRectangleArea(heights []int) int {
+func LargestRectangleArea(heights []int) int {
 	// key = value, value = [indexes]
 	heightsMap := make(map[int][]int)
 	heightsSort := []Height{}
