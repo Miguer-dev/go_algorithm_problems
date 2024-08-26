@@ -11,16 +11,12 @@ func twoSum(numbers []int, target int) []int {
 		sum := numbers[pointerStart] + numbers[pointerEnd]
 
 		if sum == target {
-			result = append(result, pointerStart+1, pointerEnd+1)
-			break
+			return append(result, pointerStart+1, pointerEnd+1)
 		}
 		if sum < target {
-			pointerStart += 1
-			continue
-		}
-		if sum > target {
-			pointerEnd -= 1
-			continue
+			pointerStart++
+		} else if sum > target {
+			pointerEnd--
 		}
 
 	}
