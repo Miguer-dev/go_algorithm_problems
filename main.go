@@ -6,5 +6,5 @@ import (
 )
 
 func main() {
-	fmt.Print(binary_search.BinarySearch([]int{-1, 0, 3, 5, 9, 12}, 0, 0))
+	fmt.Print(binary_search.SearchMatrix([][]int{[]int{1, 3, 5, 7}, []int{10, 11, 16, 20}, []int{23, 30, 34, 60}}, 79))
 }
